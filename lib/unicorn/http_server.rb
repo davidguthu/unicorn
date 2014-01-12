@@ -750,6 +750,8 @@ class Unicorn::HttpServer
         Gem.refresh
       end
       self.app = app.call
+      logger.info "sleeping #{ENV['UNICORN_SPAWN_SLEEP'] || 25} seconds after spawn for rails init"
+      sleep ENV['UNICORN_SPAWN_SLEEP'] || 25
     end
   end
 

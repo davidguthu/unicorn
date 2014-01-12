@@ -1,5 +1,5 @@
 # -*- encoding: binary -*-
-ENV["VERSION"] or abort "VERSION= must be specified"
+#ENV["VERSION"] or abort "VERSION= must be specified"
 manifest = File.readlines('.manifest').map! { |x| x.chomp! }
 require 'wrongdoc'
 extend Wrongdoc::Gemspec
@@ -14,7 +14,7 @@ end.compact
 
 Gem::Specification.new do |s|
   s.name = %q{unicorn}
-  s.version = ENV["VERSION"].dup
+  s.version = '4.8.0'
   s.authors = ["#{name} hackers"]
   s.summary = summary
   s.date = Time.now.utc.strftime('%Y-%m-%d')
